@@ -1,5 +1,7 @@
 package com.github.coffeechris.calendlyapi.webhook;
 
+import java.util.List;
+
 import lombok.Data;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
@@ -16,6 +18,7 @@ public class RequestBody {
     public static class Payload {
         @JsonProperty("event_type")
         private EventType eventType;
+        private Event event;
 
         @Data
         public static class EventType {
@@ -28,23 +31,21 @@ public class RequestBody {
 
             @Data
             public static class Owner {
-
+                private String type;
+                private String uuid;
             }
+        }
+
+        @Data
+        public static class Event {
+            String uuid;
+            @JsonProperty("assigned_to")
+            List<String> assignedTo;
         }
     }
 /*
     "payload":{
-      "event_type":{
-        "uuid":"CCCCCCCCCCCCCCCC",
-        "kind":"One-on-One",
-        "slug":"event_type_name",
-        "name":"Event Type Name",
-        "duration":15,
-        "owner":{
-          "type":"users",
-          "uuid":"DDDDDDDDDDDDDDDD"
-        }
-      },
+
       "event":{
         "uuid":"BBBBBBBBBBBBBBBB",
         "assigned_to":[
