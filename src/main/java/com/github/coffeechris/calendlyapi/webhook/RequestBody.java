@@ -41,6 +41,15 @@ public class RequestBody {
             String uuid;
             @JsonProperty("assigned_to")
             List<String> assignedTo;
+            @JsonProperty("extended_assigned_to")
+            List<ExtendedAssignedTo> extendedAssignedTo;
+
+            @Data
+            public static class ExtendedAssignedTo {
+                private String name;
+                private String email;
+                private boolean primary;
+            }
         }
     }
 /*
