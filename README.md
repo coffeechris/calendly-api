@@ -4,3 +4,6 @@ Simple library for handling Calendly's webhook.
 
 # Build Instructions
 `./gradlew jar`
+
+# References
+* https://developer.calendly.com/docs/sample-webhook-data

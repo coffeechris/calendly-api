@@ -23,5 +23,6 @@ repositories {
 
 
 dependencies {
+    compile('com.fasterxml.jackson.core:jackson-annotations:2.9.5')
     compile('org.projectlombok:lombok:1.16.16')
 }
