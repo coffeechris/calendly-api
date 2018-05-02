@@ -1,1 +1,1 @@
-[![Release](https://jitpack.io/v/coffeechris/Repo.svg)](https://jitpack.io/#coffeechris/Repo)
+[![0.0.1](https://jitpack.io/v/coffeechris/calendly-api.svg)](https://jitpack.io/#coffeechris/calendly-api)
