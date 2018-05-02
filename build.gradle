@@ -1,0 +1,27 @@
+buildscript {
+	ext {
+	}
+	repositories {
+		mavenCentral()
+		maven { url 'https://jitpack.io' }
+	}
+	dependencies {
+	}
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+
+group = 'com.github.coffeechris'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = 1.8
+
+repositories {
+	mavenCentral()
+	maven { url "https://jitpack.io" }
+}
+
+
+dependencies {
+    compile('org.projectlombok:lombok:1.16.16')
+}
