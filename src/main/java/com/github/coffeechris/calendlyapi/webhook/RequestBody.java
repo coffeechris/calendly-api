@@ -7,6 +7,11 @@ import lombok.Data;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
+/**
+ * Request body of the Calendly Webhook.
+ *
+ * @see <a href="https://developer.calendly.com/docs/sample-webhook-data">https://developer.calendly.com/docs/sample-webhook-data</a>
+ */
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class RequestBody {
@@ -22,6 +27,17 @@ public class RequestBody {
         private Invitee invitee;
         @JsonProperty("questions_and_answers")
         private List<QuestionAnswer> questionsAndAnswers;
+        @JsonProperty("questions_and_responses")
+        private QuestionResponses questionResponses;
+        private Tracking tracking;
+        @JsonProperty("old_event")
+        private Event oldEvent;
+        @JsonProperty("old_invitee")
+        private Invitee oldInvitee;
+        @JsonProperty("new_event")
+        private Event newEvent;
+        @JsonProperty("new_invitee")
+        private Invitee newInvitee;
 
         @Data
         public static class EventType {
@@ -120,31 +136,41 @@ public class RequestBody {
             private String question;
             private String answer;
         }
+
+        @Data
+        public static class QuestionResponses {
+            @JsonProperty("1_question")
+            private String question1;
+            @JsonProperty("1_response")
+            private String response1;
+            @JsonProperty("2_question")
+            private String question2;
+            @JsonProperty("2_response")
+            private String response2;
+            @JsonProperty("3_question")
+            private String question3;
+            @JsonProperty("3_response")
+            private String response3;
+            @JsonProperty("4_question")
+            private String question4;
+            @JsonProperty("4_response")
+            private String response4;
+        }
+
+        @Data
+        public static class Tracking {
+            @JsonProperty("utm_campaign")
+            private String utmCampaign;
+            @JsonProperty("utm_source")
+            private String utmSource;
+            @JsonProperty("utm_medium")
+            private String utmMedium;
+            @JsonProperty("utm_content")
+            private String utmContent;
+            @JsonProperty("utm_term")
+            private String utmTerm;
+            @JsonProperty("salesforce_uuid")
+            private String salesforceUuid;
+        }
     }
-/*
-    "payload":{
-      "questions_and_responses":{
-        "1_question":"Skype ID",
-        "1_response":"fake_skype_id",
-        "2_question":"Facebook ID",
-        "2_response":"fake_facebook_id",
-        "3_question":"Twitter ID",
-        "3_response":"fake_twitter_id",
-        "4_question":"Google ID",
-        "4_response":"fake_google_id"
-      },
-      "tracking":{
-        "utm_campaign":null,
-        "utm_source":null,
-        "utm_medium":null,
-        "utm_content":null,
-        "utm_term":null,
-        "salesforce_uuid":null
-      },
-      "old_event":null,
-      "old_invitee":null,
-      "new_event":null,
-      "new_invitee":null
-    }
-    */
 }
