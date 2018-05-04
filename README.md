@@ -1,4 +1,4 @@
-[![0.1.0](https://jitpack.io/v/coffeechris/calendly-api.svg)](https://jitpack.io/#coffeechris/calendly-api)
+[![v0.1.0](https://jitpack.io/v/coffeechris/calendly-api.svg)](https://jitpack.io/#coffeechris/calendly-api)
 
 Simple library for handling Calendly's webhook.
 
